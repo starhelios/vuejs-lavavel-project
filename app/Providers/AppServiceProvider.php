@@ -8,6 +8,7 @@ use Inertia\Inertia;
 
 class AppServiceProvider extends ServiceProvider
 {
+
     /**
      * Register any application services.
      *
@@ -33,8 +34,17 @@ class AppServiceProvider extends ServiceProvider
                            'errors' => function () {
                                return Session::get('errors')
                                    ? Session::get('errors')->getBag('default')->getMessages()
-                                   : (object) [];
+                                   : (object)[];
                            },
+                           // Lazily shared auth data
+                           'auth' => function () {
+                               return [
+                                   'user' => auth()->user() ? [
+                                       'id' => auth()->user()->id,
+                                       'name' => auth()->user()->name
+                                   ] : null
+                               ];
+                           }
                        ]);
     }
 }

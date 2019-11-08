@@ -9,6 +9,9 @@ class Campaign extends Model
     use HasFields;
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'campaign_data' => 'json',
+    ];
 
     public function country()
     {
@@ -23,5 +26,10 @@ class Campaign extends Model
     public function labels()
     {
         return $this->hasMany(LineItem::class);
+    }
+
+    public function getUriAttribute()
+    {
+        return route('campaigns.show', ['campaign' => $this->id]);
     }
 }

@@ -49508,7 +49508,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/rami/projects/agni/resources/js/auth.js */"./resources/js/auth.js");
+        module.exports = __webpack_require__(/*! /Users/vittorioemmermann/GitHub/agni/resources/js/auth.js */"./resources/js/auth.js");
 
 
 /***/ })

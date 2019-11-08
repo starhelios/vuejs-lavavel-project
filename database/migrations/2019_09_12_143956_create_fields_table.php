@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateFieldsTable extends Migration
 {
@@ -18,6 +18,7 @@ class CreateFieldsTable extends Migration
             $table->string('name');
             $table->unsignedInteger('order_column')->index()->nullable();
             $table->unsignedInteger('field_type')->index()->default(0);
+            $table->enum('field_entity', ['campaign', 'line_item', 'creative', 'insertion_order'])->default('campaign');
             $table->unsignedInteger('position')->index()->default(0);
             $table->unsignedInteger('label_value_generation_type')->index()->default(0);
             $table->boolean('taggable')->default(0)->index();
