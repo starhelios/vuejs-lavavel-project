@@ -12,7 +12,7 @@ use BenSampo\Enum\Enum;
 final class FieldPosition extends Enum
 {
     const Campaign =   0;
-    const LabelGeneral =   1;
-    const LabelTargeting = 2;
+    const LineItem = 1;
+    const InsertionOrder = 2;
     const Creative = 3;
 }

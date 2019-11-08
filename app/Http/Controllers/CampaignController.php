@@ -27,7 +27,7 @@ class CampaignController extends BaseController
      */
     public function create()
     {
-        $fields = Field::where('field_entity', 'campaign')->get();
+        $fields = Field::where('field_position', '0')->get();
         return Inertia::render('Campaigns/Create', compact('fields'));
     }
 
