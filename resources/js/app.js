@@ -8,6 +8,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 import { InertiaApp } from '@inertiajs/inertia-vue'
+import { store } from './store';
 
 /**
  * The following block of code may be used to automatically register your
@@ -32,7 +33,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = document.getElementById('app')
+const app = document.getElementById('app');
+
 
 new Vue({
     render: h => h(InertiaApp, {
@@ -41,4 +43,7 @@ new Vue({
             resolveComponent: name => require(`./Pages/${name}`).default,
         },
     }),
-}).$mount(app)
+    store
+}).$mount(app);
+
+

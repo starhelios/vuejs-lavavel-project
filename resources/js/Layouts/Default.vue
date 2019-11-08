@@ -1,18 +1,18 @@
 <template>
     <main>
-        <header class="p-3 border-2 w-full flex flex-row justify-around">
-            <inertia-link href="/">Home</inertia-link>
-            <inertia-link href="/about">About</inertia-link>
-            <inertia-link href="/contact">Contact</inertia-link>
-        </header>
+        <ag-header/>
         <article>
-            <slot />
+            <slot/>
         </article>
+        <ag-footer/>
     </main>
 </template>
 
 <script>
+    import Inertia from "@inertiajs/inertia-vue/src/app";
+
     export default {
+        components: {Inertia},
         props: {
             title: String,
         },

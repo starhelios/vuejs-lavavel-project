@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateCampaignsTable extends Migration
 {
@@ -16,8 +16,8 @@ class CreateCampaignsTable extends Migration
         Schema::create('campaigns', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable();
-            $table->unsignedInteger('agency_id')->index();
-            $table->unsignedInteger('country_id')->index();
+            $table->unsignedInteger('agency_id')->index()->nullable();
+            $table->unsignedInteger('country_id')->index()->nullable();
             $table->json('disabled_fields')->nullable();
             $table->json('campaign_data')->nullable();
             $table->timestamps();

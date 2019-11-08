@@ -16,6 +16,9 @@ Auth::routes();
 
 Route::resource('campaigns', 'CampaignController');
 
+Route::view('/imprint', 'imprint')->name('imprint');
+Route::view('/policy', 'policy')->name('policy');;
 
-
-Route::get('/home', 'HomeController@index');
+Route::get('/platform', 'PlatformController@index');
+Route::post('/platform', 'PlatformController@update');
+Route::get('/home', 'HomeController@index')->name('home');

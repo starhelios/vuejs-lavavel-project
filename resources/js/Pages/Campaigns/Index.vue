@@ -17,7 +17,9 @@
 </template>
 
 <script>
+    import Layout from '../../Layouts/Default';
     export default {
+        layout: Layout,
         props: ['campaigns'],
     }
 </script>

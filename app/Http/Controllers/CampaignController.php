@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Campaign;
+use App\Field;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -26,7 +27,8 @@ class CampaignController extends BaseController
      */
     public function create()
     {
-        return Inertia::render('Campaigns/Create');
+        $fields = Field::where('field_entity', 'campaign')->get();
+        return Inertia::render('Campaigns/Create', compact('fields'));
     }
 
     /**
@@ -38,10 +40,11 @@ class CampaignController extends BaseController
     public function store(Request $request)
     {
         $data = $request->validate([
-
+                                       'name' => 'required',
+                                       'campaign_data' => 'required'
                                    ]);
         $campaign = Campaign::create($data);
-        return response($campaign, 201);
+        return redirect($campaign->uri);
     }
 
     /**
@@ -52,7 +55,7 @@ class CampaignController extends BaseController
      */
     public function show(Campaign $campaign)
     {
-        //
+        return Inertia::render('Campaigns/Show', compact('campaign'));
     }
 
     /**
