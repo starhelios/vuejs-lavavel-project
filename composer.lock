@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d9510d089817a1c6cc0c404519e9367",
+  "content-hash": "5a497ef92fa4bc7ad503cce4361a98fc",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -3213,6 +3213,61 @@
             "time": "2019-08-26T14:21:49+00:00"
         },
         {
+          "name": "simplesquid/nova-enum-field",
+          "version": "v1.1.0",
+          "source": {
+            "type": "git",
+            "url": "https://github.com/simplesquid/nova-enum-field.git",
+            "reference": "00bd01ede6b089f2a5864f30dc53cf0b22223ca0"
+          },
+          "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/simplesquid/nova-enum-field/zipball/00bd01ede6b089f2a5864f30dc53cf0b22223ca0",
+            "reference": "00bd01ede6b089f2a5864f30dc53cf0b22223ca0",
+            "shasum": ""
+          },
+          "require": {
+            "bensampo/laravel-enum": "^1.26",
+            "illuminate/support": "^5.8|^6.0",
+            "laravel/nova": "^2.0",
+            "php": "^7.3"
+          },
+          "require-dev": {
+            "orchestra/testbench": "^3.8|^4.0",
+            "phpunit/phpunit": "^8.2",
+            "symfony/var-dumper": "^4.3"
+          },
+          "type": "library",
+          "autoload": {
+            "psr-4": {
+              "SimpleSquid\\Nova\\Fields\\Enum\\": "src"
+            }
+          },
+          "notification-url": "https://packagist.org/downloads/",
+          "license": [
+            "MIT"
+          ],
+          "authors": [
+            {
+              "name": "Matthew Poulter",
+              "email": "matthew.poulter@simplesquid.co.za",
+              "homepage": "https://simplesquid.co.za/",
+              "role": "Developer"
+            }
+          ],
+          "description": "A Laravel Nova field to add enums to resources.",
+          "homepage": "https://github.com/simplesquid/nova-enum-field",
+          "keywords": [
+            "enum",
+            "field",
+            "laravel",
+            "nova",
+            "nova-enum-field",
+            "simplesquid"
+          ],
+          "time": "2019-10-30T17:08:03+00:00"
+        },
+      {
             "name": "spatie/laravel-permission",
             "version": "3.2.0",
             "source": {

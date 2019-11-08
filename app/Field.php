@@ -16,7 +16,7 @@ class Field extends Model
 
     protected $enumCasts = [
         'field_type' => FieldType::class,
-        'field_position' => FieldPosition::class,
+        'position' => FieldPosition::class,
         'label_value_generation_type' => LabelValueGenerationType::class,
     ];
 
