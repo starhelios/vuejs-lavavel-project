@@ -11,9 +11,9 @@ use BenSampo\Enum\Enum;
  */
 final class FieldType extends Enum
 {
-    const DropDown =   0;
-    const Text =   1;
-    const Date = 2;
-    const Time = 3;
-    const Creatives = 4;
+
+    const Select = 'select';
+    const TextInput = 'text';
+    const DatePicker = 'date';
+    const TimePicker = 'time';
 }

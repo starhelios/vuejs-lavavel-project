@@ -7,6 +7,7 @@ use App\Enums\FieldType;
 use App\Enums\LabelValueGenerationType;
 use BenSampo\Enum\Traits\CastsEnums;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Field extends Model
 {
@@ -21,11 +22,19 @@ class Field extends Model
     ];
 
     protected $casts = [
-        'field_type' => 'int',
+        'field_type' => 'string',
         'field_position' => 'int',
         'label_value_generation_type' => 'int'
     ];
 
 
+    public function getComponentNameAttribute()
+    {
+        return 'ag-' . Str::kebab($this->field_type->key);
+    }
 
+    public function field_values()
+    {
+        return $this->hasMany(FieldValue::class);
+    }
 }

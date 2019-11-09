@@ -1,5 +1,9 @@
 <template>
     <div>
+
+        <inertia-link href="/campaigns/create">
+            <sn-button>New Campaign</sn-button>
+        </inertia-link>
         <table>
             <tr v-for="campaign in campaigns.data">
                 <td>{{campaign.id}}</td>
@@ -18,6 +22,7 @@
 
 <script>
     import Layout from '../../Layouts/Default';
+
     export default {
         layout: Layout,
         props: ['campaigns'],

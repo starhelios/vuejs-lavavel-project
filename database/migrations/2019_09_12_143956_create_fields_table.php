@@ -17,7 +17,7 @@ class CreateFieldsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->unsignedInteger('order_column')->index()->nullable();
-            $table->unsignedInteger('field_type')->index()->default(0);
+            $table->string('field_type')->index()->default('select');
             $table->enum('field_entity', ['campaign', 'line_item', 'creative', 'insertion_order'])->default('campaign');
             $table->unsignedInteger('position')->index()->default(0);
             $table->unsignedInteger('label_value_generation_type')->index()->default(0);
