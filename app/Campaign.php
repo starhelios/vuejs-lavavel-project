@@ -23,9 +23,19 @@ class Campaign extends Model
         return $this->belongsTo(Agency::class);
     }
 
-    public function labels()
+    public function line_items()
     {
         return $this->hasMany(LineItem::class);
+    }
+
+    public function creatives()
+    {
+        return $this->hasMany(Creative::class);
+    }
+
+    public function insertion_orders()
+    {
+        return $this->hasMany(InsertionOrder::class);
     }
 
     public function getUriAttribute()

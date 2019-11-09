@@ -16,7 +16,7 @@ class CampaignController extends BaseController
      */
     public function index(Request $request)
     {
-        $campaigns = Campaign::paginate(15);
+        $campaigns = Campaign::with('creatives', 'insertion_orders', 'line_items')->paginate(15);
         return Inertia::render('Campaigns/Index', compact('campaigns'));
     }
 
@@ -27,7 +27,7 @@ class CampaignController extends BaseController
      */
     public function create()
     {
-        $fields = Field::where('field_position', '0')->get();
+        $fields = Field::where('field_entity', 'campaign')->get();
         return Inertia::render('Campaigns/Create', compact('fields'));
     }
 
