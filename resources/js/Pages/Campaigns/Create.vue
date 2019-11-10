@@ -1,7 +1,9 @@
 <template>
     <div class="container mx-auto">
-        <breadcrumbs :title="'New Compaign'" />
-
+        <breadcrumbs
+            :title="'Dashboard'"
+            :links="{ Germany: 'home', 'Digital Ad Berlin': true }"
+        />
         <div class="page-view mt-10">
             <h2 class="text-brand-500 font-semibold text-2xl text-center mb-8">
                 General Campaign Information
