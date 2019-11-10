@@ -4,11 +4,7 @@
             {{ label }}
             <span class="lowercase" v-if="optional">(optional)</span>
         </p>
-        <v-select
-            :options="options"
-            :value="value"
-            :placeholder="placeholder"
-        ></v-select>
+        <v-select :options="options" :value="value"></v-select>
         <div class="absolute left-0 mt-12 ml-2 top-0 " v-if="withLeftSlot">
             <slot name="left-icon"></slot>
         </div>
