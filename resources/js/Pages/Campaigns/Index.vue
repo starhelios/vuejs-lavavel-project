@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
 
         <inertia-link href="/campaigns/create">
             <sn-button>New Campaign</sn-button>
