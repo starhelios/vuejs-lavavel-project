@@ -1,30 +1,31 @@
 <template>
     <div class="container">
-
-        <inertia-link href="/campaigns/create">
-            <sn-button>New Campaign</sn-button>
-        </inertia-link>
-        <table>
-            <tr v-for="campaign in campaigns.data">
-                <td>{{campaign.id}}</td>
-                <td>{{campaign.name}}</td>
-            </tr>
-        </table>
-
-        <inertia-link v-if="campaigns.prev_page_url" :href="campaigns.prev_page_url">
-            <sn-button>Prev Page</sn-button>
-        </inertia-link>
-        <inertia-link v-if="campaigns.next_page_url" :href="campaigns.next_page_url">
-            <sn-button>Next Page</sn-button>
-        </inertia-link>
+        <div class="flex justify-between mb-8">
+            <breadcrumbs
+                :title="'Dashboard'"
+                :back="false"
+                :links="{ Germany: 'home', 'Digital Ad Berlin': true }"
+            />
+            <inertia-link href="/campaigns/create">
+                <sn-button class="text-uppercase">New Campaign</sn-button>
+            </inertia-link>
+        </div>
+        <TableExpand
+            :columns="[{ label: 'Campaigns', key: 'name' }]"
+            :data="[{ name: 'Test1' }, { name: 'Test2' }]"
+        />
     </div>
 </template>
 
 <script>
-    import Layout from '../../Layouts/Default';
+import Layout from "../../Layouts/Default";
+import TableExpand from "../../components/Tables/Expand";
 
-    export default {
-        layout: Layout,
-        props: ['campaigns'],
-    }
+export default {
+    layout: Layout,
+    components: {
+        TableExpand
+    },
+    props: ["campaigns"]
+};
 </script>

@@ -1,7 +1,9 @@
 <template>
     <div class="container mx-auto">
-        <breadcrumbs :title="'New Compaign'" />
-
+        <breadcrumbs
+            :title="'Dashboard'"
+            :links="{ Germany: 'home', 'Digital Ad Berlin': true }"
+        />
         <div class="page-view mt-10">
             <h2 class="text-brand-500 font-semibold text-2xl text-center mb-8">
                 General Campaign Information
@@ -9,52 +11,29 @@
             <div class="row">
                 <form @submit.prevent="submit" class="col-12">
                     <div class="row">
-                        <sn-select-input
-                            class="col-md-4 mb-8"
-                            v-model="form.brand"
-                            :label="'Brand'"
-                            :options="['Dorflex']"
-                        ></sn-select-input>
-                        <sn-text-input
-                            class="col-md-4 mb-8"
-                            v-model="form.flight"
-                            :label="'Flight'"
-                        ></sn-text-input>
-                        <sn-select-input
-                            class="col-md-4 mb-8"
-                            v-model="form.driver"
-                            :label="'Value Driver'"
-                            :options="['PerMessage']"
-                        ></sn-select-input>
-                        <sn-select-input
-                            class="col-md-4 mb-8"
-                            v-model="form.objective"
-                            :label="'Objective'"
-                            :options="['Awareness']"
-                        ></sn-select-input>
-                        <sn-date-picker
-                            class="col-md-4 mb-8"
-                            v-model="form.date_start"
-                            :label="'Date Start'"
-                        ></sn-date-picker>
-                        <sn-date-picker
-                            class="col-md-4 mb-8"
-                            v-model="form.date_end"
-                            :label="'Date End'"
-                        ></sn-date-picker>
+                        <span class="col-md-4 mb-8" v-for="field in formFileds">
+                            <sn-select-input
+                                v-if="field.type === 'select'"
+                                :key="field.key"
+                                v-model="form[field.key]"
+                                :label="field.label"
+                                :options="field.options"
+                            ></sn-select-input>
 
-                        <sn-select-input
-                            class="col-md-4 mb-8"
-                            v-model="form.market"
-                            :label="'Market'"
-                            :options="['Germany']"
-                        ></sn-select-input>
-
-                        <sn-text-input
-                            class="col-md-4 mb-8"
-                            v-model="form.free"
-                            :label="'Campaign Free Field(optional)'"
-                        ></sn-text-input>
+                            <sn-date-picker
+                                v-else-if="field.type === 'date'"
+                                :key="field.key"
+                                v-model="form[field.key]"
+                                :label="field.label"
+                                :options="field.options"
+                            ></sn-date-picker>
+                            <sn-text-input
+                                v-else
+                                :key="field.key"
+                                v-model="form[field.key]"
+                                :label="field.label"
+                            ></sn-text-input>
+                        </span>
                     </div>
                     <div class="text-center mt-10">
                         <button
@@ -82,7 +61,52 @@ export default {
             campaign: {
                 name: "",
                 campaign_data: {}
-            }
+            },
+            formFileds: [
+                {
+                    type: "select",
+                    options: ["Dorflex"],
+                    label: "Brand",
+                    key: "brand"
+                },
+                {
+                    label: "Flight",
+                    key: "flight"
+                },
+
+                {
+                    type: "select",
+                    options: ["PerMessage"],
+                    label: "Value Driver",
+                    key: "driver"
+                },
+
+                {
+                    type: "select",
+                    options: ["Objective"],
+                    label: "Awareness",
+                    key: "objective"
+                },
+
+                {
+                    type: "date",
+                    label: "Date Start",
+                    key: "date_start"
+                },
+
+                {
+                    type: "date",
+                    label: "Date End",
+                    key: "date_end"
+                },
+
+                {
+                    type: "select",
+                    options: ["Germany"],
+                    label: "Market",
+                    key: "market"
+                }
+            ]
         };
     },
     methods: {
