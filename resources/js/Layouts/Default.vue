@@ -1,7 +1,7 @@
 <template>
     <main>
         <ag-header/>
-        <article>
+        <article class="container-fluid">
             <slot/>
         </article>
         <ag-footer/>
