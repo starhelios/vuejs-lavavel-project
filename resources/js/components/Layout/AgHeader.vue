@@ -5,6 +5,7 @@
             <img src="assets/images/agni-logo.svg" alt="" class="px-4 h-8">
         </div>
         <div class="w-full flex justify-end px-8 py-2">
+            <a class="py-2 px-4 text-xl text-brand-600 font-bold" href="/campaigns">Campaigns</a>
             <a class="py-2 px-4 text-xl text-brand-600 font-bold" href="/platform">Platform</a>
             <a class="py-2 px-4 text-xl text-brand-600 font-bold" href="/admin" target="_blank">Admin</a>
             <a class="py-2 px-4 text-xl text-brand-600 font-bold" href="#"
