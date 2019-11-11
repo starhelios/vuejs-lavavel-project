@@ -3,7 +3,7 @@
         <tr>
             <td v-if="isExpand" class="expand-icon"></td>
             <td v-if="hasSelect" class="select-icon">
-                <input type="checkbox" v-model="selected" />
+                <sn-check-box v-model="selected" />
             </td>
             <td v-for="column in columns" class="2xl:font-bold">
                 {{ column.label }}

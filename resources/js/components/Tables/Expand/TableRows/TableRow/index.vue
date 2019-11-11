@@ -12,7 +12,7 @@
             ></i>
         </td>
         <td v-if="hasSelect" class="select-icon">
-            <input type="checkbox" v-model="selected" />
+            <sn-check-box v-model="selected"></sn-check-box>
         </td>
         <td
             v-for="(column, indx) in columns"
