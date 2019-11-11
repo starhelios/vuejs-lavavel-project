@@ -3,8 +3,8 @@
         <td v-if="isExpand" class="expand-icon">
             <i
                 @click="expanded = !expanded"
-                style="cursor:pointer"
-                class="fal p-2 "
+                style="cursor:pointer;font-size: 24px"
+                class="fal pl-2 pr-2 "
                 :class="{
                     'fa-angle-down': expanded,
                     'fa-angle-right': !expanded
@@ -21,12 +21,26 @@
         >
             {{ row[column.key] }}
         </td>
+        <td v-if="hasEdit" class="select-icon">
+            <PopUpActions
+                :items="actions"
+                @onAction="action => $emit('action', { action, row })"
+            />
+        </td>
     </tr>
 </template>
 <script>
+import PopUpActions from "../../../../PopUpActions";
 export default {
+    components: {
+        PopUpActions
+    },
     props: {
         hasSelect: {
+            type: Boolean,
+            default: true
+        },
+        hasEdit: {
             type: Boolean,
             default: true
         },
@@ -48,7 +62,17 @@ export default {
     data() {
         return {
             selected: false,
-            expanded: false
+            expanded: false,
+            actions: [
+                {
+                    name: "Edit",
+                    icon: "edit"
+                },
+                {
+                    name: "Delete",
+                    icon: "trash-alt"
+                }
+            ]
         };
     }
 };
