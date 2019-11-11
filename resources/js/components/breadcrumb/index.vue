@@ -5,7 +5,7 @@
                 v-if="back"
                 class=" bg-brand-500 hover:bg-blue-700 text-white font-bold  rounded-full mr-4"
             >
-                <i class="fal fa-arrow-left"></i>
+                <i class="fal fa-chevron-left text-white"></i>
             </button>
         </inertia-link>
 

@@ -24,6 +24,15 @@
             * {
                 text-align: left;
             }
+            .my-table-body {
+                tr {
+                    &:last-child {
+                        td {
+                            border: none;
+                        }
+                    }
+                }
+            }
             &.expand-icon,
             .select-icon {
                 text-align: center;
