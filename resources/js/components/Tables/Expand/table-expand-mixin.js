@@ -10,6 +10,10 @@ export default {
             type: Boolean | String,
             default: true
         },
+        hasPagination: {
+            type: Boolean | String,
+            default: true
+        },
         hasShift: {
             type: Boolean | String,
             default: false

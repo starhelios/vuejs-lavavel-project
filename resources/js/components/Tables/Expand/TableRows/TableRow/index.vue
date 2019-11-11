@@ -33,6 +33,7 @@
                     <div class="col-md-3 p-0">
                         <TableExpand
                             :hasTabsHeader="false"
+                            :hasPagination="false"
                             :hasExpand="false"
                             :hasShift="true"
                             :columns="[
@@ -44,6 +45,7 @@
                     <div class="col-md-6 p-0">
                         <TableExpand
                             :hasTabsHeader="false"
+                            :hasPagination="false"
                             :hasExpand="false"
                             :hasShift="true"
                             :columns="[{ label: 'Line Item', key: 'name' }]"
@@ -53,6 +55,7 @@
                     <div class="col-md-3 p-0">
                         <TableExpand
                             :hasTabsHeader="false"
+                            :hasPagination="false"
                             :hasExpand="false"
                             :hasShift="true"
                             :columns="[{ label: 'Creative', key: 'name' }]"

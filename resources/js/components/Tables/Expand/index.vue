@@ -1,7 +1,7 @@
 <template>
     <div class="my-table my-table-expand">
         <TableTabHeader v-if="hasTabsHeader" />
-        <div>
+        <div :class="{ 'pb-3': hasPagination }">
             <TableHeader
                 @onSelect="onSelect"
                 :columns="columns"
@@ -19,17 +19,20 @@
                 :data="data"
             />
         </div>
+        <TablePagination v-if="hasPagination" />
     </div>
 </template>
 <script>
 import TableTabHeader from "./TableTabHeader";
 import TableHeader from "./TableHeader";
 import TableRows from "./TableRows";
+import TablePagination from "./TablePagination";
 import TableExpandMixin from "./table-expand-mixin";
 export default {
     mixins: [TableExpandMixin],
     name: "TableExpand",
     components: {
+        TablePagination,
         TableRows,
         TableHeader,
         TableTabHeader
