@@ -19,7 +19,7 @@ class CreateCampaignsTable extends Migration
             $table->unsignedInteger('agency_id')->index()->nullable();
             $table->unsignedInteger('country_id')->index()->nullable();
             $table->json('disabled_fields')->nullable();
-            $table->json('campaign_data')->nullable();
+            $table->json('data')->nullable();
             $table->timestamps();
         });
     }

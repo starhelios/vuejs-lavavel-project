@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-  "content-hash": "5a497ef92fa4bc7ad503cce4361a98fc",
+    "content-hash": "cf0fc39ea64f9eb6e7b2104cd2d37f70",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2719,6 +2719,56 @@
             "time": "2019-09-17T03:41:22+00:00"
         },
         {
+            "name": "predis/predis",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2016-06-16T16:22:20+00:00"
+        },
+        {
             "name": "psr/container",
             "version": "1.0.0",
             "source": {
@@ -3213,61 +3263,61 @@
             "time": "2019-08-26T14:21:49+00:00"
         },
         {
-          "name": "simplesquid/nova-enum-field",
-          "version": "v1.1.0",
-          "source": {
-            "type": "git",
-            "url": "https://github.com/simplesquid/nova-enum-field.git",
-            "reference": "00bd01ede6b089f2a5864f30dc53cf0b22223ca0"
-          },
-          "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/simplesquid/nova-enum-field/zipball/00bd01ede6b089f2a5864f30dc53cf0b22223ca0",
-            "reference": "00bd01ede6b089f2a5864f30dc53cf0b22223ca0",
-            "shasum": ""
-          },
-          "require": {
-            "bensampo/laravel-enum": "^1.26",
-            "illuminate/support": "^5.8|^6.0",
-            "laravel/nova": "^2.0",
-            "php": "^7.3"
-          },
-          "require-dev": {
-            "orchestra/testbench": "^3.8|^4.0",
-            "phpunit/phpunit": "^8.2",
-            "symfony/var-dumper": "^4.3"
-          },
-          "type": "library",
-          "autoload": {
-            "psr-4": {
-              "SimpleSquid\\Nova\\Fields\\Enum\\": "src"
-            }
-          },
-          "notification-url": "https://packagist.org/downloads/",
-          "license": [
-            "MIT"
-          ],
-          "authors": [
-            {
-              "name": "Matthew Poulter",
-              "email": "matthew.poulter@simplesquid.co.za",
-              "homepage": "https://simplesquid.co.za/",
-              "role": "Developer"
-            }
-          ],
-          "description": "A Laravel Nova field to add enums to resources.",
-          "homepage": "https://github.com/simplesquid/nova-enum-field",
-          "keywords": [
-            "enum",
-            "field",
-            "laravel",
-            "nova",
-            "nova-enum-field",
-            "simplesquid"
-          ],
-          "time": "2019-10-30T17:08:03+00:00"
+            "name": "simplesquid/nova-enum-field",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/simplesquid/nova-enum-field.git",
+                "reference": "00bd01ede6b089f2a5864f30dc53cf0b22223ca0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/simplesquid/nova-enum-field/zipball/00bd01ede6b089f2a5864f30dc53cf0b22223ca0",
+                "reference": "00bd01ede6b089f2a5864f30dc53cf0b22223ca0",
+                "shasum": ""
+            },
+            "require": {
+                "bensampo/laravel-enum": "^1.26",
+                "illuminate/support": "^5.8|^6.0",
+                "laravel/nova": "^2.0",
+                "php": "^7.3"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.8|^4.0",
+                "phpunit/phpunit": "^8.2",
+                "symfony/var-dumper": "^4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SimpleSquid\\Nova\\Fields\\Enum\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Poulter",
+                    "email": "matthew.poulter@simplesquid.co.za",
+                    "homepage": "https://simplesquid.co.za/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova field to add enums to resources.",
+            "homepage": "https://github.com/simplesquid/nova-enum-field",
+            "keywords": [
+                "enum",
+                "field",
+                "laravel",
+                "nova",
+                "nova-enum-field",
+                "simplesquid"
+            ],
+            "time": "2019-10-30T17:08:03+00:00"
         },
-      {
+        {
             "name": "spatie/laravel-permission",
             "version": "3.2.0",
             "source": {
@@ -5047,6 +5097,47 @@
                 "environment"
             ],
             "time": "2019-09-10T21:37:39+00:00"
+        },
+        {
+            "name": "yassi/nova-graphique-theme",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yassipad/nova-graphique-theme.git",
+                "reference": "650ad58300842bd034a1c379660caba56a8deec3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yassipad/nova-graphique-theme/zipball/650ad58300842bd034a1c379660caba56a8deec3",
+                "reference": "650ad58300842bd034a1c379660caba56a8deec3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Yassi\\NovaGraphiqueTheme\\ThemeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yassi\\NovaGraphiqueTheme\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova theme.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2019-03-15T17:24:32+00:00"
         },
         {
             "name": "zendframework/zend-code",

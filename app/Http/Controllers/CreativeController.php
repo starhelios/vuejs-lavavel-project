@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Campaign;
 use App\Creative;
+use App\Field;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class CreativeController extends Controller
 {
@@ -22,9 +25,10 @@ class CreativeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Campaign $campaign)
     {
-        //
+        $fields = Field::where('field_entity', 'line_item')->get();
+        return Inertia::render('Creatives/Create', compact('campaign', 'fields'));
     }
 
     /**
@@ -35,7 +39,16 @@ class CreativeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+                                       'data' => 'required',
+                                       'campaign_id' => 'required|exists:campaigns,id'
+                                   ]);
+        $creatie = Creative::create($data);
+        return redirect()->route('campaigns.show', ['campaign' => $creatie->campaign_id])
+            ->withMessage([
+                              'title' => 'Creative stored',
+                              'body' => 'The Creative got stored successfully to our database',
+                              'type' => 'success']);
     }
 
     /**

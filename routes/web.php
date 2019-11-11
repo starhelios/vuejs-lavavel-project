@@ -16,6 +16,20 @@ Auth::routes();
 
 Route::resource('campaigns', 'CampaignController');
 
+Route::get('/campaigns/{campaign}/insertion_orders/create', 'InsertionOrderController@create');
+Route::get('/campaigns/{campaign}/line_items/create', 'LineItemController@create');
+Route::get('/campaigns/{campaign}/creatives/create', 'CreativeController@create');
+
+Route::resource('insertion_orders', 'InsertionOrderController')->except([
+                                                                            'create', 'index', 'show'
+                                                                        ]);
+Route::resource('line_items', 'LineItemController')->except([
+                                                                'create', 'index', 'show'
+                                                            ]);
+Route::resource('creatives', 'CreativeController')->except([
+                                                                'create', 'index', 'show'
+                                                            ]);
+
 Route::view('/imprint', 'imprint')->name('imprint');
 Route::view('/policy', 'policy')->name('policy');;
 

@@ -27,6 +27,10 @@ class Field extends Model
         'label_value_generation_type' => 'int'
     ];
 
+    protected $appends = [
+      'component_name'
+    ];
+
 
     public function getComponentNameAttribute()
     {

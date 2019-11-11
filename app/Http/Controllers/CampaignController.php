@@ -40,11 +40,12 @@ class CampaignController extends BaseController
     public function store(Request $request)
     {
         $data = $request->validate([
-                                       'name' => 'required',
-                                       'campaign_data' => 'required'
+                                       'name' => 'nullable',
+                                       'data' => 'required'
                                    ]);
         $campaign = Campaign::create($data);
-        return redirect($campaign->uri);
+        return redirect($campaign->uri)
+            ->withMessage(['title' => 'Campaign created', 'body' => 'Cammpaign created successfully.', 'type' => 'success']);
     }
 
     /**
@@ -55,6 +56,7 @@ class CampaignController extends BaseController
      */
     public function show(Campaign $campaign)
     {
+        $campaign->loadMissing('insertion_orders', 'creatives', 'line_items');
         return Inertia::render('Campaigns/Show', compact('campaign'));
     }
 
@@ -66,7 +68,8 @@ class CampaignController extends BaseController
      */
     public function edit(Campaign $campaign)
     {
-        //
+        $fields = Field::where('field_entity', 'campaign')->get();
+        return Inertia::render('Campaigns/Edit', compact('campaign', 'fields'));
     }
 
     /**
@@ -78,7 +81,12 @@ class CampaignController extends BaseController
      */
     public function update(Request $request, Campaign $campaign)
     {
-        //
+        $data = $request->validate([
+                                       'data' => 'required'
+                                   ]);
+        $campaign->update($data);
+        return redirect()->route('campaigns.show', ['campaign' => $campaign->id])
+            ->withMessage(['title' => 'Stored', 'body' => 'Cammpaign updated successfully.', 'type' => 'success']);
     }
 
     /**
