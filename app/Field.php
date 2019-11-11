@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 
 class Field extends Model
 {
+
     use CastsEnums;
 
     protected $guarded = ['id'];
@@ -28,7 +29,7 @@ class Field extends Model
     ];
 
     protected $appends = [
-      'component_name'
+        'component_name'
     ];
 
 

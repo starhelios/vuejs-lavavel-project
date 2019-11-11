@@ -3,14 +3,15 @@
         <h1>
             Create campaign
         </h1>
-        <sn-alert>This is my fancy alert! :)</sn-alert>
-
-        <ag-text-input v-model="campaign.name"></ag-text-input>
         <div v-for="field in fields">
-            <b>{{field.name}}</b>
-            <ag-text-input v-model="campaign.data[field.name]"></ag-text-input>
+            <component class="pt-1" :is="field.component_name"
+                       v-model="campaign.data[field.name]"
+                       :options="field.field_values"
+                       :taggable="field.taggable"
+                       :label="field.name"
+                       :type="field.field_type"></component>
         </div>
-        <sn-button @click="submit">Create!</sn-button>
+        <ag-button @click="submit" title="create" />
 
     </div>
 </template>
