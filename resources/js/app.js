@@ -9,10 +9,11 @@ require("./bootstrap");
 window.Vue = require("vue");
 import { InertiaApp } from "@inertiajs/inertia-vue";
 
+import Fragment from "vue-fragment";
 import vSelect from "vue-select";
 import { store } from "./store";
 import "./assets/fontawesome/css/all.css";
-import 'vue-select/dist/vue-select.css';
+import "vue-select/dist/vue-select.css";
 
 /**
  * The following block of code may be used to automatically register your
@@ -34,12 +35,13 @@ files.keys().map(key =>
 );
 
 Vue.use(InertiaApp);
-
+Vue.use(Fragment.Plugin);
 Vue.component(
     "example-component",
     require("./components/ExampleComponent.vue").default
 );
 Vue.component("breadcrumbs", require("./components/breadcrumb").default);
+Vue.component("TableExpand", require("./components/Tables/Expand").default);
 Vue.component("v-select", vSelect);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
