@@ -71,7 +71,7 @@ export default {
         background: white;
         box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
         display: none;
-        border-radius: 5px;
+        border-radius: $border-radius;
 
         &.active {
             display: block;
@@ -83,12 +83,12 @@ export default {
                 font-weight: 700;
             }
             &:first-child {
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
+                border-top-left-radius: $border-radius;
+                border-top-right-radius: $border-radius;
             }
             &:last-child {
-                border-bottom-left-radius: 5px;
-                border-bottom-right-radius: 5px;
+                border-bottom-left-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
             }
 
             &:hover {
