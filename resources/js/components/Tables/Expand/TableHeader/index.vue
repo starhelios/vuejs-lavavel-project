@@ -1,7 +1,8 @@
 <template>
     <table class="my-table my-table-header">
-        <tr>
-            <td v-if="isExpand" class="expand-icon"></td>
+        <tr :class="classList">
+            <td v-if="hasShift" class="expand-icon"></td>
+            <td class="expand-icon"></td>
             <td v-if="hasSelect" class="select-icon">
                 <sn-check-box v-model="selected" />
             </td>
@@ -12,27 +13,18 @@
     </table>
 </template>
 <script>
+import TableExpandMixin from "../table-expand-mixin";
 export default {
-    props: {
-        hasSelect: {
-            type: Boolean,
-            default: true
-        },
-        isExpand: {
-            type: Boolean,
-            default: true
-        },
-        columns: {
-            type: Array,
-            default() {
-                return [];
+    mixins: [TableExpandMixin],
+    computed: {
+        selected: {
+            get() {
+                return this.$parent.selections.length > 0;
+            },
+            set() {
+                this.$emit("onSelect", "all");
             }
         }
-    },
-    data() {
-        return {
-            selected: false
-        };
     }
 };
 </script>
