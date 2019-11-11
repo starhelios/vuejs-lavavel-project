@@ -2,16 +2,18 @@
 
 namespace App;
 
+use App\Traits\HasLabel;
 use Illuminate\Database\Eloquent\Model;
 
 class Campaign extends Model
 {
-    use HasFields;
+    use HasFields, HasLabel;
     protected $guarded = ['id'];
 
     protected $casts = [
-        'campaign_data' => 'json',
+        'data' => 'json',
     ];
+    protected $appends = ['label'];
 
     public function country()
     {

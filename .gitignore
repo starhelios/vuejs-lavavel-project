@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
+/public/js/app.js
+/public/js/auth.js
+/public/css/app.css
 /storage/*.key
 /storage/logs/*
 /storage/framework/views/*.php
@@ -17,3 +20,8 @@ yarn-error.log
 .env.production
 .env.staging
 .env.help
+public/js/app.js
+public/css/app.css
+.DS_Store
+*/.DS_Store
+
