@@ -6,7 +6,7 @@
 
         <div v-for="field in fields">
             <b>{{field.name}}</b>
-            <ag-text-input v-model="line_item.data[field.name]"></ag-text-input>
+            <ag-text-input v-model="line_item.data[field.name]" :label="field.name"></ag-text-input>
         </div>
         <sn-button @click="submit">Create!</sn-button>
     </div>
