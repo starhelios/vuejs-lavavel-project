@@ -31,6 +31,13 @@ files.keys().map(key =>
 
 Vue.use(InertiaApp);
 
+import Fragment from "vue-fragment";
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
+
+Vue.use(Fragment.Plugin);
+
+Vue.component("v-select", vSelect);
 Vue.component(
     "example-component",
     require("./components/ExampleComponent.vue").default
@@ -48,7 +55,8 @@ Vue.mixin({
     data() {
         return {
             AG_ICON: {
-                ARROW_LEFT: "arrow-left.svg"
+                ARROW_LEFT: "arrow-left.svg",
+                ARROW_RIGHT: "arrow-right.svg"
             }
         };
     }
