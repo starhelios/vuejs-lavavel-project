@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(FieldsSeeder::class);
+        $this->call([
+            FieldsSeeder::class,
+            UsersSeeder::class,
+        ]);
+        foreach(\App\Field::all() as $field) {
+            factory(\App\FieldValue::class, 15)->create(['field_id' => $field->id]);
+        }
     }
 }
