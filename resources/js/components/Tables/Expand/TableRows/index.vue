@@ -1,5 +1,5 @@
 <template>
-    <table class="my-table">
+    <table class="my-table my-table-body">
         <TableRow
             v-for="(row, index) in rows"
             :key="`row-${index}`"

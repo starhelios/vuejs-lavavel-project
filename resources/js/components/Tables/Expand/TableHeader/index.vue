@@ -1,5 +1,5 @@
 <template>
-    <table class="my-table">
+    <table class="my-table my-table-header">
         <tr>
             <td v-if="isExpand" class="expand-icon"></td>
             <td v-if="hasSelect" class="select-icon">
