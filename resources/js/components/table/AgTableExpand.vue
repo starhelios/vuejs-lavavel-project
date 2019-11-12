@@ -1,7 +1,7 @@
 <template>
     <div class="my-table my-table-expand">
-        <ag-table-expand-tab-header v-if="hasTabsHeader" />
-        <div :class="{ 'pb-3': hasPagination }">
+        <ag-table-expand-top-bar v-if="hasTabsHeader" />
+        <div :class="{ 'pb-3': hasPagination }" class="pt-4">
             <ag-table-expand-header
                 @onSelect="onSelect"
                 :columns="columns"

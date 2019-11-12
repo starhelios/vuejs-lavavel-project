@@ -91,3 +91,11 @@ body {
         }
     }
 }
+.rounded-24 {
+    border-radius: 24px;
+}
+
+.disabled {
+    opacity: 0.7;
+    pointer-events: none;
+}
