@@ -1,6 +1,6 @@
 <template>
 
-    <div class="w-full bottom-footer  bottom-0 left-0 right-0 bg-gray-900   mt-16 ">
+    <div class="w-full bottom-footer  bottom-0 left-0 right-0 bg-gray-900   mt-32 ">
         <div class="w-full flex justify-between items-center">
             <div class=" items-center px-10 py-5">
                 <p class="text-white text-sm">© Copyright {{year}} all rights reserved</p>
