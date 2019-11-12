@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateFieldValuesTable extends Migration
 {
@@ -18,6 +18,9 @@ class CreateFieldValuesTable extends Migration
             $table->unsignedInteger('field_id')->index();
             $table->string('name');
             $table->string('label_part')->nullable();
+            $table->unsignedInteger('agency_id')->index()->nullable();
+            $table->unsignedInteger('country_id')->index()->nullable();
+            $table->boolean('global_available')->nullable()->default(1);
             $table->timestamps();
         });
     }

@@ -2,6 +2,9 @@
     <div>
 
         <h1>Campaign details for campaign {{campaign.id}}</h1>
+        <inertia-link href="/values/create">
+            <ag-button title="Create Values" />
+        </inertia-link>
         <div class="flex">
             <div class="w-1/3">
                 Insertion Orders

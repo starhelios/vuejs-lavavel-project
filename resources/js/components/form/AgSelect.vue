@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex flex-col relative">
-        <p class="text-brand-500 font-semibold px-2 pt-1 pb-2 capitalize" v-if="label">{{label}} <span class="lowercase"
+        <p class="text-brand-600 font-semibold px-2 pt-1 pb-2 capitalize" v-if="label">{{label}} <span class="lowercase"
                                                                                                        v-if="optional">(optional)</span>
         </p>
         <div class="w-full flex relative ">
@@ -65,6 +65,7 @@
         props: {
             ph: String,
             refin: String,
+            field_id: Number,
             type: String,
             label: String,
             optional: {
@@ -117,12 +118,19 @@
             indexSelected() {
 
             },
-            addValue() {
-                console.log('added new value')
+            addValue(value) {
+                let data = {};
+                data[this.field_id] = value;
+                this.$inertia.post('/values', {
+                    formData: data,
+                    stay: true
+                }, {
+                    preserveState: true,
+                    preserveScroll: true,
+                });
             },
             selected(val) {
                 this.$emit('input', val);
-                console.log('selected ' + val);
                 this.showDropDown = false;
 
             }
