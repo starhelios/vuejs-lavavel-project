@@ -7,7 +7,8 @@
             <component class="pt-1" :is="field.component_name"
                        v-model="campaign.data[field.name]"
                        :options="field.field_values"
-                       :taggable="field.taggable"
+                       :taggable="field.taggable === 1"
+                       :field_id="field.id"
                        :label="field.name"
                        :type="field.field_type"></component>
         </div>

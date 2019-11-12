@@ -65,6 +65,7 @@
         props: {
             ph: String,
             refin: String,
+            field_id: Number,
             type: String,
             label: String,
             optional: {
@@ -117,12 +118,19 @@
             indexSelected() {
 
             },
-            addValue() {
-                console.log('added new value')
+            addValue(value) {
+                let data = {};
+                data[this.field_id] = value;
+                this.$inertia.post('/values', {
+                    formData: data,
+                    stay: true
+                }, {
+                    preserveState: true,
+                    preserveScroll: true,
+                });
             },
             selected(val) {
                 this.$emit('input', val);
-                console.log('selected ' + val);
                 this.showDropDown = false;
 
             }
