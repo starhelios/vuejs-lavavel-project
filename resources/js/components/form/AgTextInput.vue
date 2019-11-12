@@ -7,7 +7,7 @@
                class="w-full rounded placeholder-band-600 text-brand-500 border-2 p-2 pr-8 focus:shadow-outline outline-color " :class="[error? 'border-red-500': 'border-gray-300' , withLeftSlot ? 'pl-10' : 'pl-2']"
                :placeholder="placeholder"
                :value="value"
-               v-on:input="$emit('input', $event.target.value)"
+               v-on:input="changedInput($event)"
                @blur="$emit('blur')"
                @change="$emit('change')"
                @keyup="$emit('keyup')"
@@ -46,6 +46,12 @@
                 default: false
             }
 
+        },
+        methods: {
+            changedInput(event) {
+                let val = event.target.value.replace("\t", ", ");
+                this.$emit('input', val)
+            }
         }
 
     }
