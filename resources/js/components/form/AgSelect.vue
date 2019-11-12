@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex flex-col relative">
-        <p class="text-brand-500 font-semibold px-2 pt-1 pb-2 capitalize" v-if="label">{{label}} <span class="lowercase"
+        <p class="text-brand-600 font-semibold px-2 pt-1 pb-2 capitalize" v-if="label">{{label}} <span class="lowercase"
                                                                                                        v-if="optional">(optional)</span>
         </p>
         <div class="w-full flex relative ">

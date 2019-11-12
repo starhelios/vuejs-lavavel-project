@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col relative">
-        <p class="text-brand-500 font-semibold px-2 pt-1 pb-2 capitalize">{{label}} <span class="lowercase" v-if="optional">(optional)</span></p>
+        <p class="text-brand-600 font-semibold px-2 pt-1 pb-2 capitalize">{{label}} <span class="lowercase" v-if="optional">(optional)</span></p>
         <input type="text"
                ref="textInput"
                :name="name"

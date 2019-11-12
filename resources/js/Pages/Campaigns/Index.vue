@@ -31,11 +31,16 @@
 
     export default {
         layout: Layout,
-        props: ['campaigns', 'fields'],
+        props: ['campaigns', 'fields', 'init_filters'],
         computed: {
             ...mapState({
                 filters: state => state.filters
             })
+        },
+        mounted() {
+            if(this.init_filters) {
+                this.$store.commit('setFilters', this.init_filters);
+            }
         }
     }
 </script>
