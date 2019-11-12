@@ -14,6 +14,7 @@
 Route::get('/', function () {return redirect('/campaigns');});
 Auth::routes();
 
+Route::get('/campaigns/excel', 'CampaignExcelController@download');
 Route::resource('campaigns', 'CampaignController');
 
 // Routes for creating children entities

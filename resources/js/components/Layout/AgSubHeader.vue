@@ -2,7 +2,7 @@
     <div class="w-full rounded-full bg-gray-300 flex justify-between text-center relative">
     <div class="w-1/2 flex justify-start">
         <div class="w-2/4 border-r border-gray-500 relative pt-3 p-3 text-left">
-            <input type="text" placeholder="search..." class="pl-8 bg-transparent rounded-full placeholder-brand-500 text-brand-500 pt-pxx" v-model="searchValue" @keyup="search()">
+            <input type="text" placeholder="Search..." class="pl-8 bg-transparent rounded-full placeholder-brand-500 text-brand-500 pt-pxx" v-model="searchValue" @keyup="search()">
             <img src="/assets/icons/search.svg" alt="" class="absolute left-0 top-0 ml-4 mt-4">
         </div>
         <div class="w-1/4 border-r border-gray-500 p-3 cursor-pointer flex justify-center relative" @click="openFilter()">

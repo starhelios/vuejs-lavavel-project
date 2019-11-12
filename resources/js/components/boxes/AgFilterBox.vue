@@ -33,6 +33,8 @@
     </div>
 </template>
 <script>
+    import {mapState} from 'vuex';
+
     export default {
         name: 'ag-filter-box',
         props: ['filter'],
@@ -44,9 +46,12 @@
                     {id: 2, name: 'Inseration Order', slug: 'insertion_order', inputs: this.filter['insertion_order']},
                     {id: 3, name: 'Creative', slug: 'creative', inputs: this.filter['creative']},
                 ],
-                filters: {},
+                filters: this.stateFilters || {},
                 selectedTab : 0,
             }
+        },
+        mounted() {
+            this.filters = this.stateFilters;
         },
         methods: {
             chooseTab(id , slug){
@@ -74,8 +79,17 @@
                     only: [],
                 });
             }
+        },
+        computed: {
+            ...mapState({
+                stateFilters: state => state.filters
+            })
+        },
+        watch: {
+            stateFilters(val) {
+                this.filters = val;
+            }
         }
-
     }
 </script>
 <style>
