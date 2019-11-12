@@ -1,13 +1,15 @@
 <template>
     <div class="flex justify-center	">
         <inertia-link :href="'/'">
-            <button class="w-auto  w-max-220 rounded-full flex justify-center items-center text-center font-bold  rounded-full mr-4  border-2 border-brand-500 w-min-30">
+            <button
+                class="w-auto  w-max-220 rounded-full flex justify-center items-center text-center font-bold  rounded-full mr-4  border-2 border-brand-500 w-min-30"
+            >
                 <ag-icon :name="AG_ICON.ARROW_LEFT" />
             </button>
         </inertia-link>
         <inertia-link
             :href="'/'"
-            v-for="index in [current, current + 1]"
+            v-for="index in [current]"
             :key="`page-${index}`"
         >
             <button
@@ -22,7 +24,9 @@
         </inertia-link>
 
         <inertia-link :href="'/'">
-            <button class="w-auto  w-max-220 rounded-full flex justify-center items-center text-center font-bold  rounded-full mr-4  border-2 border-brand-500 w-min-30">
+            <button
+                class="w-auto  w-max-220 rounded-full flex justify-center items-center text-center font-bold  rounded-full mr-4  border-2 border-brand-500 w-min-30"
+            >
                 <ag-icon :name="AG_ICON.ARROW_RIGHT" />
             </button>
         </inertia-link>

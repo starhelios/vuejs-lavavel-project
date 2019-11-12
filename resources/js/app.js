@@ -55,11 +55,14 @@ Vue.mixin({
     data() {
         return {
             AG_ICON: {
+                DOWNLOAD: "download.svg",
+                SEARCH: "search.svg",
                 EDIT: "edit.svg",
                 DELETE: "delete.svg",
                 MORE: "more.svg",
                 CHECKED: "checked.svg",
                 UN_CHECKED: "unchecked.svg",
+                ARROW_DOWN: "arrow-down.svg",
                 ARROW_LEFT: "arrow-left.svg",
                 ARROW_RIGHT: "arrow-right.svg"
             }
