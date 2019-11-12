@@ -78,20 +78,22 @@ export default {
     },
     data() {
         return {
-            expanded: false,
-            actions: [
-                {
-                    name: "Edit",
-                    icon: "edit"
-                },
-                {
-                    name: "Delete",
-                    icon: "trash-alt"
-                }
-            ]
+            expanded: false
         };
     },
     computed: {
+        actions() {
+            return [
+                {
+                    name: "Edit",
+                    icon: this.AG_ICON.EDIT
+                },
+                {
+                    name: "Delete",
+                    icon: this.AG_ICON.DELETE
+                }
+            ];
+        },
         colspan() {
             let res = 0;
             if (this.hasExpand) res++;
