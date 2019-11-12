@@ -1,10 +1,10 @@
 <template>
-    <div class="main-pop-up" ref="dropdownMenu">
+    <div class="main-pop-up " ref="dropdownMenu">
         <ag-icon :name="AG_ICON.MORE" @click="show = !show" />
-        <div class="main-pop-up_dropdown" :class="{ active: show }">
+        <div class="main-pop-up_dropdown shadow-md" :class="{ active: show }">
             <div
                 v-for="item in items"
-                class="main-pop-up_dropdown_item flex align-items-center pr-8 pl-8 pb-6 pt-6"
+                class="main-pop-up_dropdown_item flex align-items-center hover:bg-gray-200  pr-8 pl-8 pb-6 pt-6"
                 @click="() => onClick(item)"
             >
                 <ag-icon :name="item.icon" v-if="item.icon" />
@@ -60,7 +60,6 @@ export default {
         z-index: 1;
         position: absolute;
         background: white;
-        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
         display: none;
         border-radius: $border-radius;
 
@@ -80,10 +79,6 @@ export default {
             &:last-child {
                 border-bottom-left-radius: $border-radius;
                 border-bottom-right-radius: $border-radius;
-            }
-
-            &:hover {
-                background: #d9d9d9;
             }
         }
     }
