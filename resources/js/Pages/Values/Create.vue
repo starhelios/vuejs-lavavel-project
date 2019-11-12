@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto">
+    <div>
         <div class="flex flex-wrap">
             <div class="w-1/3 p-4" v-for="field in fields">
                 <ag-text-input :label="field.label" v-model="formData[field.id]"/>

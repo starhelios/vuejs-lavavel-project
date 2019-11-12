@@ -16,8 +16,16 @@ class CampaignController extends BaseController
      */
     public function index(Request $request)
     {
-        $campaigns = Campaign::with('creatives', 'insertion_orders', 'line_items')->paginate(15);
-        return Inertia::render('Campaigns/Index', compact('campaigns'));
+        $filters = json_decode($request->filters);
+        $campaigns = Campaign::with('creatives', 'insertion_orders', 'line_items');
+        if ($filters) {
+            foreach ($filters as $name => $filter_value) {
+                $campaigns->where('data->' . $name, $filter_value)->orWhereNull('data->' . $name);
+            }
+        }
+        $campaigns = $campaigns->paginate(15);
+        $fields = Field::with('field_values')->get()->groupBy('field_entity');
+        return Inertia::render('Campaigns/Index', compact('campaigns', 'fields'));
     }
 
     /**
