@@ -4,6 +4,11 @@
         <inertia-link href="/campaigns/create">
             <sn-button>New Campaign</sn-button>
         </inertia-link>
+
+
+        <div class="py-8">
+            <ag-sub-header :filter="fields"/>
+        </div>
         <table>
             <tr v-for="campaign in campaigns.data">
                 <td>{{campaign.id}}</td>
@@ -22,9 +27,15 @@
 
 <script>
     import Layout from '../../Layouts/Default';
+    import {mapState} from 'vuex';
 
     export default {
         layout: Layout,
-        props: ['campaigns'],
+        props: ['campaigns', 'fields'],
+        computed: {
+            ...mapState({
+                filters: state => state.filters
+            })
+        }
     }
 </script>

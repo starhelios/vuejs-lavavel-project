@@ -16,12 +16,16 @@
             <div class="w-full flex flex-col">
                 <div class="w-full flex justify-start flex-wrap pb-5 p-2" v-for="tab in filterTabs" :key="tab.id" v-if="selectedTab === tab.id">
                     <div class="w-1/3 text-left p-2" v-for="input in tab.inputs">
-                        <ag-text-input  label="Brand"></ag-text-input>
+                        <ag-select :label="input.name"
+                                   :options="input.field_values"
+                                   :taggable="false"
+                                   type="select"
+                                   v-model="filters[input.name]"/>
                     </div>
                 </div>
                 <div class="w-full flex justify-end px-4 pb-2">
                     <ag-button type="full" class="px-8 mx-2" title="reset" @click="resetFilter()"></ag-button>
-                    <ag-button class="mx-2 px-8" type="full" title="apply" @click="applyFilter()"></ag-button>
+                    <ag-button @click="applyFilter" class="mx-2 px-8" title="apply" type="full"></ag-button>
 
                 </div>
             </div>
@@ -31,14 +35,16 @@
 <script>
     export default {
         name: 'ag-filter-box',
+        props: ['filter'],
         data(){
             return {
                 filterTabs: [
-                    {id: 0 , name: 'Campaign' , slug: 'campaign' , inputs: 12},
-                    {id: 1 , name: 'Line Item' , slug: 'line_item' , inputs : 7},
-                    {id: 2 , name: 'Inseration Order' , slug: 'insertion_order' , inputs: 5},
-                    {id: 3 , name: 'Creative' , slug: 'creative' , inputs: 2},
+                    {id: 0, name: 'Campaign', slug: 'campaign', inputs: this.filter['campaign']},
+                    {id: 1, name: 'Line Item', slug: 'line_item', inputs: this.filter['line_item']},
+                    {id: 2, name: 'Inseration Order', slug: 'insertion_order', inputs: this.filter['insertion_order']},
+                    {id: 3, name: 'Creative', slug: 'creative', inputs: this.filter['creative']},
                 ],
+                filters: {},
                 selectedTab : 0,
             }
         },
@@ -50,7 +56,23 @@
 
             },
             applyFilter(){
-
+                console.log(this.filters);
+                this.$store.commit('setFilters', this.filters);
+                let data = {};
+                Object.keys(this.filters).map((key, index) => {
+                    data[key] = this.filters[key];
+                })
+                console.log(data);
+                this.$inertia.visit('/campaigns', {
+                    data: {
+                        filters: data
+                    },
+                    method: 'get',
+                    replace: false,
+                    preserveState: false,
+                    preserveScroll: false,
+                    only: [],
+                });
             }
         }
 

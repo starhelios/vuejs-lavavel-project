@@ -27,12 +27,13 @@
             <div class="w-1/5 p-3 flex justify-center cursor-pointer" @click="remove()"> <img src="/assets/icons/delete.svg" alt=""  > </div>
         </div>
     </div>
-        <ag-filter-box v-if="showFilter"></ag-filter-box>
+        <ag-filter-box :filter="filter" v-if="showFilter"></ag-filter-box>
     </div>
 </template>
 <script>
     export default {
         name: 'ag-sub-header',
+        props: ['filter'],
         data(){
             return {
                 searchValue: '',
