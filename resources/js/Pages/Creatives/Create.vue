@@ -5,8 +5,13 @@
         </h1>
 
         <div v-for="field in fields">
-            <b>{{field.name}}</b>
-            <ag-text-input v-model="creative.data[field.name]"></ag-text-input>
+            <component class="pt-1" :is="field.component_name"
+                       v-model="campaign.data[field.name]"
+                       :options="field.field_values"
+                       :taggable="field.taggable === 1"
+                       :field_id="field.id"
+                       :label="field.name"
+                       :type="field.field_type"></component>
         </div>
         <sn-button @click="submit">Create!</sn-button>
     </div>

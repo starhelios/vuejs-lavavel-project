@@ -1,12 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
         testVuex: '123',
         pagesNumber: 5,
-        currentPage: 1
+        currentPage: 1,
+        filters: {},
+
     },
     mutations: {
         setTest(state , testVuex){
@@ -17,6 +20,9 @@ export const store = new Vuex.Store({
         },
         setCurrentPage(state , num){
             state.currentPage = num
+        },
+        setFilters(state, filters) {
+            state.filters = filters
         }
     }
 })

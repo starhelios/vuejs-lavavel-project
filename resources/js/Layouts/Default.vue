@@ -4,9 +4,9 @@
         <div v-if="$page.flash">
             <ag-toast :body="$page.flash.body" :title="$page.flash.title" :type="$page.flash.type" />
         </div>
-        <article>
+        <div class="container mx-auto">
             <slot/>
-        </article>
+        </div>
         <ag-footer/>
     </main>
 </template>
