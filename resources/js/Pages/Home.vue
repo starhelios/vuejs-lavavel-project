@@ -6,13 +6,23 @@
         <ag-button title="submit" type="full" :disabled="true">
         </ag-button>
         <br>
-        <ag-button  type="full" >
-
-        </ag-button>
         <br>
-        <div class="w-200 flex flex-center p-3">
-            <sn-pagination ></sn-pagination>
-        </div>
+        <ag-sub-header>
+
+        </ag-sub-header>
+        <br>
+
+        <br>
+        <br>
+
+        <br>
+        <br>
+
+        <br>
+        <br>
+
+        <br>
+
         <sn-message type="error"></sn-message>
         <div class="w-96">
             <ag-text-input label="Description" v-model="model" @blur="capital(model)" @keyup="change" :optional="true" :error="error" :withLeftSlot="true">

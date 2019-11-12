@@ -15,7 +15,7 @@
                        :class="toggleclass"
                        class="w-full rounded placeholder-band-600 text-brand-500 border-2 p-2 pr-8 focus:shadow-outline outline-color  "
                        placeholder="New Value"
-                       ref="valueinput" @keyup.enter="$emit('saveNewValue')" v-model="localValueAccessor"
+                       ref="valueinput" @keyup.enter="store" v-model="localValueAccessor"
                        v-show="showInput">
             </div>
 
@@ -37,6 +37,12 @@
             return {
                 localValueAccessor: this.localValue,
                 showInput: false,
+            }
+        },
+        methods: {
+            store() {
+                this.$emit('saveNewValue', this.localValueAccessor);
+                this.localValueAccessor = "";
             }
         }
     }
