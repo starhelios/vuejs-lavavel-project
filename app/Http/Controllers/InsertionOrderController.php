@@ -18,7 +18,8 @@ class InsertionOrderController extends Controller
      */
     public function create(Campaign $campaign)
     {
-        $fields = Field::where('field_entity', 'insertion_order')->get();
+        $fields = Field::where('field_entity', 'insertion_order')
+            ->with('field_values')->get();
         return Inertia::render('InsertionOrder/Create', compact('campaign', 'fields'));
     }
 
