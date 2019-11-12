@@ -27,7 +27,8 @@ class CampaignController extends BaseController
      */
     public function create()
     {
-        $fields = Field::where('field_entity', 'campaign')->get();
+        $fields = Field::where('field_entity', 'campaign')
+            ->with('field_values')->get();
         return Inertia::render('Campaigns/Create', compact('fields'));
     }
 
@@ -68,7 +69,9 @@ class CampaignController extends BaseController
      */
     public function edit(Campaign $campaign)
     {
-        $fields = Field::where('field_entity', 'campaign')->get();
+        $fields = Field::where('field_entity', 'campaign')
+            ->with('field_values')->get();
+
         return Inertia::render('Campaigns/Edit', compact('campaign', 'fields'));
     }
 
