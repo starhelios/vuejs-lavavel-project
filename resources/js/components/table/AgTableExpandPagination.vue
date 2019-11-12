@@ -1,7 +1,7 @@
 <template>
     <div class="flex justify-center	">
         <inertia-link :href="'/'">
-            <button class="  link-item font-bold  rounded-full mr-4">
+            <button class="w-auto  w-max-220 rounded-full flex justify-center items-center text-center font-bold  rounded-full mr-4  border-2 border-brand-500 w-min-30">
                 <ag-icon :name="AG_ICON.ARROW_LEFT" />
             </button>
         </inertia-link>
@@ -15,14 +15,14 @@
                     'bg-brand-500 hover:bg-blue-700 text-white':
                         index === current
                 }"
-                class="link-item rounded-full font-bold  rounded-full mr-4"
+                class="w-auto  w-max-220 rounded-full flex justify-center items-center text-center font-bold  rounded-full mr-4  border-2 border-brand-500 w-min-30"
             >
                 {{ index }}
             </button>
         </inertia-link>
 
         <inertia-link :href="'/'">
-            <button class="rounded-full link-item font-bold  rounded-full mr-4">
+            <button class="w-auto  w-max-220 rounded-full flex justify-center items-center text-center font-bold  rounded-full mr-4  border-2 border-brand-500 w-min-30">
                 <ag-icon :name="AG_ICON.ARROW_RIGHT" />
             </button>
         </inertia-link>
@@ -39,12 +39,3 @@ export default {
     }
 };
 </script>
-<style lang="scss" scoped>
-@import "../../../sass/variables";
-.link-item {
-    width: 34px;
-    height: 34px;
-    text-align: center;
-    border: 1px solid $indigo;
-}
-</style>

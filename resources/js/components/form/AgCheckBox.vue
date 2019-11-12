@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col relative sn-check-box align-items-center">
         <label
-            class="flex flex-col align-items-center"
+            class="flex justify-center items-center"
             :class="{ checked: val }"
         >
             <input
@@ -17,7 +17,7 @@
                 v-on:change="onChange"
             />
 
-            <span class="checkmark"></span>
+            <ag-icon :name="icon" :key="val" />
             <span>{{ label }}</span>
         </label>
 
@@ -56,6 +56,9 @@ export default {
         }
     },
     computed: {
+        icon() {
+            return this.val ? this.AG_ICON.CHECKED : this.AG_ICON.UN_CHECKED;
+        },
         val: {
             get() {
                 return this.value;
@@ -130,34 +133,5 @@ label {
 /* Show the checkmark when checked */
 .sn-check-box input:checked ~ .checkmark:after {
     display: block;
-}
-
-.sn-check-box {
-    .checked {
-        .checkmark {
-            &:before {
-                content: "";
-                position: absolute;
-                left: 6px;
-                top: -4px;
-                width: 14px;
-                height: 18px;
-                border: solid white;
-                border-width: 0 9px 3px 0;
-                -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
-            }
-            &:after {
-                left: 6px;
-                top: -4px;
-                width: 11px;
-                height: 18px;
-                border: solid $indigo;
-                border-width: 0 3px 3px 0;
-                -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
-            }
-        }
-    }
 }
 </style>

@@ -1,24 +1,14 @@
 <template>
     <div class="main-pop-up" ref="dropdownMenu">
-        <span>
-            <i
-                @click="show = !show"
-                style="cursor:pointer;font-size: 24px"
-                class="fal pl-2 pr-2 fa-ellipsis-h"
-            ></i>
-        </span>
+        <ag-icon :name="AG_ICON.MORE" @click="show = !show" />
         <div class="main-pop-up_dropdown" :class="{ active: show }">
             <div
                 v-for="item in items"
-                class="main-pop-up_dropdown_item flex align-items-center pr-4 pl-4 pb-3 pt-3"
+                class="main-pop-up_dropdown_item flex align-items-center pr-8 pl-8 pb-6 pt-6"
                 @click="() => onClick(item)"
             >
-                <i
-                    :class="[`fa-${item.icon}`]"
-                    class="fal "
-                    v-if="item.icon"
-                ></i>
-                <span class="ml-2 ">{{ item.name }}</span>
+                <ag-icon :name="item.icon" v-if="item.icon" />
+                <span class="ml-2 text-base ">{{ item.name }}</span>
             </div>
         </div>
     </div>
@@ -79,9 +69,9 @@ export default {
         }
         .main-pop-up_dropdown_item {
             cursor: pointer;
-            min-width: 150px;
+            min-width: 200px;
             * {
-                font-weight: 700;
+
             }
             &:first-child {
                 border-top-left-radius: $border-radius;

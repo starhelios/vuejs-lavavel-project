@@ -1,13 +1,20 @@
 <template>
     <span
+        @click="$emit('click')"
         v-bind="$attrs"
         v-if="!templateSvg"
-        class="icon__wrapper"
+        class="icon__wrapper cursor-pointer block"
         :style="iconSize"
         :class="{ icon__circle: circle, icon__size: iconSize }"
         v-html="icon"
     ></span>
-    <span v-bind="$attrs" ref="templateSvgRef" v-else v-html="icon"></span>
+    <span
+        v-bind="$attrs"
+        @click="$emit('click')"
+        ref="templateSvgRef"
+        v-else
+        v-html="icon"
+    ></span>
 </template>
 
 <script>
