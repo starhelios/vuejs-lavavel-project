@@ -5,7 +5,7 @@
                 v-if="backLink"
                 class=" bg-brand-500 hover:bg-blue-700 text-white font-bold  rounded-full "
             >
-                <ag-icon :name="AG_ICON.ARROW_LEFT" />
+                <ag-icon :name="AG_ICON.ARROW_LEFT"/>
             </button>
         </inertia-link>
 
@@ -24,39 +24,39 @@
     </div>
 </template>
 <script>
-export default {
-    name: "ag-bread-crumb",
-    props: {
-        title: {
-            type: String,
-            required: true
+    export default {
+        name: "ag-bread-crumb",
+        props: {
+            title: {
+                type: String,
+                required: true
+            },
+            backLink: {
+                type: String
+            },
+            links: {
+                type: Object,
+                default() {
+                    return {};
+                }
+            }
         },
-        backLink: {
-            type: String
-        },
-        links: {
-            type: Object,
-            default() {
-                return {};
+        computed: {
+            linksV() {
+                return Object.keys(this.links).map(key => ({
+                    name: key,
+                    value: this.links[key]
+                }));
             }
         }
-    },
-    computed: {
-        linksV() {
-            return Object.keys(this.links).map(key => ({
-                name: key,
-                value: this.links[key]
-            }));
-        }
-    }
-};
+    };
 </script>
 <style lang="scss" scoped>
-.breadcrumbs {
-    button {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
+    .breadcrumbs {
+        button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+        }
     }
-}
 </style>

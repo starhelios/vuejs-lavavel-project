@@ -4,7 +4,7 @@
             <button
                 class="w-auto  w-max-220 rounded-full flex justify-center items-center text-center font-bold  rounded-full mr-4  border-2 border-brand-500 w-min-30"
             >
-                <ag-icon :name="AG_ICON.ARROW_LEFT" />
+                <ag-icon :name="AG_ICON.ARROW_LEFT"/>
             </button>
         </inertia-link>
         <inertia-link
@@ -27,19 +27,19 @@
             <button
                 class="w-auto  w-max-220 rounded-full flex justify-center items-center text-center font-bold  rounded-full mr-4  border-2 border-brand-500 w-min-30"
             >
-                <ag-icon :name="AG_ICON.ARROW_RIGHT" />
+                <ag-icon :name="AG_ICON.ARROW_RIGHT"/>
             </button>
         </inertia-link>
     </div>
 </template>
 <script>
-export default {
-    name: "ag-table-expand-pagination",
-    props: {
-        current: {
-            type: Number,
-            default: 1
+    export default {
+        name: "ag-table-expand-pagination",
+        props: {
+            current: {
+                type: Number,
+                default: 1
+            }
         }
-    }
-};
+    };
 </script>

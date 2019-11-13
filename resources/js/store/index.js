@@ -12,13 +12,13 @@ export const store = new Vuex.Store({
 
     },
     mutations: {
-        setTest(state , testVuex){
+        setTest(state, testVuex) {
             state.testVuex = testVuex
         },
-        setPagesNumber(state , num){
-         state.pagesNumber = num
+        setPagesNumber(state, num) {
+            state.pagesNumber = num
         },
-        setCurrentPage(state , num){
+        setCurrentPage(state, num) {
             state.currentPage = num
         },
         setFilters(state, filters) {

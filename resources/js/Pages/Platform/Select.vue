@@ -18,7 +18,7 @@
                 <ag-button title="Continue"
                            @click="access()"
                            :class="!accept ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'"
-                            type="full"
+                           type="full"
                 >
 
                 </ag-button>
@@ -29,24 +29,57 @@
 
 <script>
     import Layout from '../../Layouts/Default'
+
     export default {
         layout: Layout,
-        data(){
+        data() {
             return {
-                platform : '',
-                accept : false,
-                platforms : [
-                    {id: 0 , name: 'DV360' , slug: 'dv360', icon: '/assets/logos/DV360.svg', activeIcon: '/assets/logos/DV360-white.svg' , active : false , comingSoon : false},
-                    {id: 1 , name: 'Youtube' , slug: 'youtube' , icon: '/assets/logos/youtube.svg', activeIcon: '/assets/logos/youtube.svg' , active : false, comingSoon : true},
-                    {id: 2 , name: 'Facebook' , slug: 'facebook' , icon: '/assets/logos/facebook.svg', activeIcon: '/assets/logos/facebook.svg' , active : false, comingSoon : true},
-                    {id: 3 , name: 'IO' , slug: 'io', icon: '/assets/logos/Io.svg', activeIcon: '/assets/logos/Io.svg' , active : false, comingSoon : true},
+                platform: '',
+                accept: false,
+                platforms: [
+                    {
+                        id: 0,
+                        name: 'DV360',
+                        slug: 'dv360',
+                        icon: '/assets/logos/DV360.svg',
+                        activeIcon: '/assets/logos/DV360-white.svg',
+                        active: false,
+                        comingSoon: false
+                    },
+                    {
+                        id: 1,
+                        name: 'Youtube',
+                        slug: 'youtube',
+                        icon: '/assets/logos/youtube.svg',
+                        activeIcon: '/assets/logos/youtube.svg',
+                        active: false,
+                        comingSoon: true
+                    },
+                    {
+                        id: 2,
+                        name: 'Facebook',
+                        slug: 'facebook',
+                        icon: '/assets/logos/facebook.svg',
+                        activeIcon: '/assets/logos/facebook.svg',
+                        active: false,
+                        comingSoon: true
+                    },
+                    {
+                        id: 3,
+                        name: 'IO',
+                        slug: 'io',
+                        icon: '/assets/logos/Io.svg',
+                        activeIcon: '/assets/logos/Io.svg',
+                        active: false,
+                        comingSoon: true
+                    },
                 ],
                 choosen: null,
             }
         },
         methods: {
-            selectPlatform(id , currentPlatform) {
-                this.choosen =  id;
+            selectPlatform(id, currentPlatform) {
+                this.choosen = id;
                 this.accept = true;
                 axios.post('/platform', {
                     current_platform: currentPlatform
@@ -55,8 +88,8 @@
                 })
 
             },
-            access(){
-                if(this.accept)
+            access() {
+                if (this.accept)
                     this.$inertia.visit('/');
             }
         }

@@ -19,6 +19,7 @@
 
 <script>
     import Layout from '../../Layouts/Default';
+
     export default {
         layout: Layout,
         props: ['campaign', 'fields'],

@@ -2,7 +2,7 @@
     <main>
         <ag-header/>
         <div v-if="$page.flash">
-            <ag-toast :body="$page.flash.body" :title="$page.flash.title" :type="$page.flash.type" />
+            <ag-toast :body="$page.flash.body" :title="$page.flash.title" :type="$page.flash.type"/>
         </div>
         <div class="container mx-auto">
             <slot/>
