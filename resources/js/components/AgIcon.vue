@@ -91,8 +91,13 @@ export default {
         },
         async onGetIcon() {
             try {
-                this.icon = await fetch(`/assets/icons/${this.name}`);
-                this.icon = await this.icon.text();
+                if (window["CASHED_" + this.name]) {
+                    return (this.icon = window["CASHED_" + this.name]);
+                }
+                let icon = await fetch(`/assets/icons/${this.name}`);
+                icon = await icon.text();
+                window["CASHED_" + this.name] = icon;
+                this.icon = icon;
                 return this.icon;
             } catch (e) {
                 console.error(e);

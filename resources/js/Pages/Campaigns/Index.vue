@@ -1,6 +1,6 @@
 <template>
-    <div class="container mx-auto">
-        <div class="flex justify-between mb-8 pt-4">
+    <div class="container mx-auto pb-4">
+        <div class="flex justify-between mb-8 pt-4 ">
             <ag-bread-crumb
                 :title="'Dashboard'"
                 :back="false"
