@@ -5,7 +5,7 @@
             @click="show = !show"
         >
             <span class="  mr-2 text-gray-600 uppercase">{{ label }}</span>
-            <ag-icon :name="AG_ICON.ARROW_DOWN" />
+            <ag-icon :name="AG_ICON.ARROW_DOWN"/>
         </div>
         <div
             class="absolute shadow-md right-0   w-56"
@@ -26,44 +26,44 @@
     </div>
 </template>
 <script>
-export default {
-    name: "ag-table-expand-filter",
-    props: {
-        label: {
-            type: String,
-            required: true
-        },
-        tabs: {
-            type: Array,
-            default() {
-                return [];
-            }
-        }
-    },
-    data() {
-        return {
-            selected: false,
-            show: false
-        };
-    },
-    methods: {
-        documentClick(e) {
-            let el = this.$refs.dropdownMenu;
-            let target = e.target;
-            if (el !== target && !el.contains(target)) {
-                this.show = false;
+    export default {
+        name: "ag-table-expand-filter",
+        props: {
+            label: {
+                type: String,
+                required: true
+            },
+            tabs: {
+                type: Array,
+                default() {
+                    return [];
+                }
             }
         },
-        onChange(item, e) {
-            item.selected = e;
-            this.$forceUpdate();
+        data() {
+            return {
+                selected: false,
+                show: false
+            };
+        },
+        methods: {
+            documentClick(e) {
+                let el = this.$refs.dropdownMenu;
+                let target = e.target;
+                if (el !== target && !el.contains(target)) {
+                    this.show = false;
+                }
+            },
+            onChange(item, e) {
+                item.selected = e;
+                this.$forceUpdate();
+            }
+        },
+        created() {
+            document.addEventListener("click", this.documentClick);
+        },
+        destroyed() {
+            document.removeEventListener("click", this.documentClick);
         }
-    },
-    created() {
-        document.addEventListener("click", this.documentClick);
-    },
-    destroyed() {
-        document.removeEventListener("click", this.documentClick);
-    }
-};
+    };
 </script>

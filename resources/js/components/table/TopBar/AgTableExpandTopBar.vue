@@ -3,7 +3,7 @@
         class="bg-gray-200 rounded-24 w-full h-12 pl-4 pr-4 flex flex-wrap items-center justify-between"
     >
         <span class=" flex items-center h-full">
-            <ag-table-expand-search />
+            <ag-table-expand-search/>
             <ag-table-expand-filter
                 class="pl-8 pr-8  border-l-2 border-gray-300"
                 label="Filter"
@@ -40,7 +40,7 @@
     </div>
 </template>
 <script>
-export default {
-    name: "ag-table-expand-top-bar"
-};
+    export default {
+        name: "ag-table-expand-top-bar"
+    };
 </script>

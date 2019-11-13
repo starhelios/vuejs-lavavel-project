@@ -7,8 +7,8 @@
 require("./bootstrap");
 
 window.Vue = require("vue");
-import { InertiaApp } from "@inertiajs/inertia-vue";
-import { store } from "./store";
+import {InertiaApp} from "@inertiajs/inertia-vue";
+import {store} from "./store";
 
 /**
  * The following block of code may be used to automatically register your

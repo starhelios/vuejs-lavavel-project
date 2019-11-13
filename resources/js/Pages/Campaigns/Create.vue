@@ -2,9 +2,9 @@
     <div class="w-full flex flex-col">
         <div class="w-full flex justify-start py-4 px-20">
             <inertia-link href="/campaigns">
-            <ag-button type="full" class="mt-2">
-                <img src="/assets/icons/long-arrow-left.svg" alt="" slot="icon" >
-            </ag-button>
+                <ag-button type="full" class="mt-2">
+                    <img src="/assets/icons/long-arrow-left.svg" alt="" slot="icon">
+                </ag-button>
             </inertia-link>
             <div class="w-full flex flex-col px-4">
                 <p class="text-3xl text-brand-500">New Campaign</p>
@@ -26,9 +26,8 @@
             </div>
         </div>
         <div class="w-full flex justify-center pt-6 text-center  pb-8">
-            <ag-button @click="submit" type="full" class="px-1" title="create campaign" />
+            <ag-button @click="submit" type="full" class="px-1" title="create campaign"/>
         </div>
-
 
 
     </div>

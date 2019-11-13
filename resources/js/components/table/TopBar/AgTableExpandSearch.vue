@@ -1,6 +1,6 @@
 <template>
     <div class="flex  items-center relative">
-        <ag-icon :name="AG_ICON.SEARCH" />
+        <ag-icon :name="AG_ICON.SEARCH"/>
         <input
             type="text"
             ref="textInput"
@@ -32,29 +32,29 @@
     </div>
 </template>
 <script>
-export default {
-    name: "ag-table-expand-search",
-    props: {
-        label: String,
-        placeholder: {
-            type: String,
-            default: "Search..."
-        },
-        name: name,
-        optional: {
-            type: Boolean,
-            default: false
-        },
-        value: String,
-        error: {
-            type: Boolean,
-            default: false
-        },
-        withLeftSlot: Boolean,
-        autocomplete: {
-            type: Boolean,
-            default: false
+    export default {
+        name: "ag-table-expand-search",
+        props: {
+            label: String,
+            placeholder: {
+                type: String,
+                default: "Search..."
+            },
+            name: name,
+            optional: {
+                type: Boolean,
+                default: false
+            },
+            value: String,
+            error: {
+                type: Boolean,
+                default: false
+            },
+            withLeftSlot: Boolean,
+            autocomplete: {
+                type: Boolean,
+                default: false
+            }
         }
-    }
-};
+    };
 </script>
